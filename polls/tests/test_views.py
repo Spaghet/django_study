@@ -10,7 +10,8 @@ setup_test_environment()
 
 def create_question(question_text, days):
     """
-
+    Create a question based on question_text and days.
+    days is positive for the future and negative for the past
     :param question_text: str
     :param days: int
     :return: Question
