@@ -3,6 +3,9 @@
     {% for question in latest_question_list %}
       <li>
         <a href="{% url 'detail' question.id %}">{{question.question_text}}</a>
+        {% comment %}
+          url("detail", question.id) と等価で, urls.pyのdetailのview.detailの引数にquestion.idがいく？
+        {% endcomment %}
       </li>
     {% endfor %}
   </ul>
