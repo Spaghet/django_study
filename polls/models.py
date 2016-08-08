@@ -17,7 +17,7 @@ class Question(models.Model):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
 class Choice(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE) #これでQuestion型のインスタンスからChoiceの参照がchoice_set_allなどから取得できるようになるらしい。typename_setって感じ？
+    question = models.ForeignKey(Question, on_delete=models.CASCADE) #this allows Question instances to access Choice that associate to it through choice_set and member functions like choice_set.all() 
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
 
